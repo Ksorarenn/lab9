@@ -21,7 +21,7 @@
             String facult = in.next();
             System.out.printf("В %s факультет входят:\n", facult);
             for (Student student : students) {
-                if (facult.equals(student.getFaculty())) {
+                if (facult.equalsIgnoreCase(student.getFaculty())) {
                     System.out.println(student.getFullNAME());
                 }
             }
@@ -29,7 +29,7 @@
         public static void Receipt(Student[] students){
             Scanner in = new Scanner(System.in);
             System.out.println("Введите год: ");
-            int year = Integer.parseInt(in.next());
+            int year = in.nextInt();
             System.out.printf("Студенты, поступившие после %d года:\n",year);
             for (Student student : students) {
                 if (student.getReceiptDate() > year) {
